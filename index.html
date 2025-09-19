@@ -398,16 +398,19 @@
                         <button type="submit">Notify Me</button>
                     </div>
                 </form>
+                <div id="success-popup" style="display:none;position:fixed;top:30px;left:50%;transform:translateX(-50%);background:#22c55e;color:#fff;padding:18px 32px;border-radius:10px;box-shadow:0 4px 20px rgba(34,197,94,0.15);font-size:1.1rem;z-index:9999;align-items:center;gap:10px;">
+                    <i class="fas fa-check-circle" style="margin-right:10px;"></i> ✔ Successfully Joined!
+                </div>
             </div>
         </div>
         
         <footer>
             <p>© 2025 WorkHub Technologies. Developer Jahid Hasan.</p>
             <div class="social-links">
-                <a href="https://x.com/jahidhasan_tw" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/jahidads1" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://bd.linkedin.com/in/jahidads" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/jahidads" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/jahidhasan2.0ff/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/jahidads" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </footer>
     </div>
@@ -416,11 +419,15 @@
         document.getElementById('waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
-            
-            // In a real implementation, you would send this to your backend
-            // For now, we'll simulate success
-            alert(`Thank you! We'll notify you at ${email} when we launch.`);
+
+            // Simulate success: show popup
+            const popup = document.getElementById('success-popup');
+            popup.style.display = 'flex';
             document.getElementById('email').value = '';
+
+            setTimeout(function() {
+                popup.style.display = 'none';
+            }, 2500);
         });
     </script>
 </body>
